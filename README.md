@@ -4,7 +4,7 @@ This project is a part of the course Software Engineering in the ENSG (Nancy).
 
 ![Logo de l'ENSG](./logo_ENSG.png)
 
-## Key-words
+## Keywords
 * CMake
 * C++
 * Software Engineering
