@@ -27,3 +27,11 @@ if (HELLOWORLD_WITH_TESTS)
 	message(STATUS "Configuring Hello World with tests")
 	add_subdirectory(tests)
 endif()
+
+# create the package configuration file
+include(CMakePackageConfigHelpers)
+configure_package_config_file(
+	cmake/HelloProjConfig.cmake.in
+	HelloProjConfig.cmake
+	INSTALL_DESTINATION cmake/
+)
