@@ -4,5 +4,10 @@ This project is a part of the course Software Engineering in the ENSG (Nancy).
 
 ![Logo de l'ENSG](./logo_ENSG.png)
 
+## Key-words
+* CMake
+* C++
+* Software Engineering
+
 ## Author
 MOULARD Marie
