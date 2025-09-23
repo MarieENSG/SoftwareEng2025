@@ -12,6 +12,7 @@ configure_file(cmake/HelloProjConfig.h.in HelloProjConfig.h)
 
 # add libraries
 add_subdirectory(src/basic)
+add_subdirectory(src/simtown)
 
 # add executable
 option(HELLOWORLD_WITH_EXECUTABLES "Compile mains" ON)
