@@ -4,6 +4,8 @@
 # Prerequisites
 *.d
 
+.bash_history
+
 # Compiled Object files
 *.slo
 *.lo
