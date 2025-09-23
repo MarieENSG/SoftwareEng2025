@@ -7,11 +7,11 @@ Rock::Rock() : rid_(rock_counter_) {
 	rock_counter_++;
 }
 
-Rock::~Rock(){
+Rock::~Rock() {
 	std::cout << "	Rock " << rid_ << " is destroyed" << std::endl;
 }
 
-std::ostream& operator<<( std::ostream& out, const Rock& rhs) {
+std::ostream& operator<<(std::ostream& out, const Rock& rhs) {
 	out << "## " << rhs.rid_ << " ##" << std::endl;
-	return out;	
+	return out;
 }

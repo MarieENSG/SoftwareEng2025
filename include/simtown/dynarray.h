@@ -5,42 +5,42 @@
 # include <assert.h>
 
 template <class T> class DynArray {
-		public:
-			DynArray();
-			DynArray(unsigned int size);
-			DynArray(const DynArray<T>& rhs); // TO DO
-			~DynArray();
-			
-			unsigned int size() const;
-			unsigned int push_back(const T& item);
-			const T& operator[](unsigned int index) const;
-			T& operator[](unsigned int index);
-			DynArray<T>& operator=(const DynArray<T>& rhs); // TO DO
-			
-		private:
-			unsigned int size_;
-			unsigned int capacity_;
-			T* elements_;
+public:
+	DynArray();
+	DynArray(unsigned int size);
+	DynArray(const DynArray<T>& rhs); // TO DO
+	~DynArray();
+
+	unsigned int size() const;
+	unsigned int push_back(const T& item);
+	const T& operator[](unsigned int index) const;
+	T& operator[](unsigned int index);
+	DynArray<T>& operator=(const DynArray<T>& rhs); // TO DO
+
+private:
+	unsigned int size_;
+	unsigned int capacity_;
+	T* elements_;
 };
 
 template <class T> DynArray<T>::DynArray()
-	: size_(0), capacity_(2), elements_(new T[2]) { 
+	: size_(0), capacity_(2), elements_(new T[2]) {
 	std::cout << "DynArray::DynArray()" << std::endl;
 }
 
-template <class T> DynArray<T>::DynArray(unsigned int size) 
-	: size_((size>=1) ? size : 2), capacity_(size) {
+template <class T> DynArray<T>::DynArray(unsigned int size)
+	: size_((size >= 1) ? size : 2), capacity_(size) {
 	std::cout << "DynArray::DynArray(" << size << ")" << std::endl;
 	//assert( size_ >= 0); alternative au unsigned int
 	elements_ = new T[capacity_];
 }
 
-template <class T> DynArray<T>::DynArray(const DynArray<T>& rhs) 
+template <class T> DynArray<T>::DynArray(const DynArray<T>& rhs)
 	: size_(rhs.size_), capacity_(rhs.capacity_), elements_(new T[rhs.capacity_]) {
-		std::cout << "DynArray::DynArray(DynArray&) of " << size_ << std::endl;
-		for (unsigned int i=0; i < size_; ++i){
-			elements_[i] = rhs.elements_[i];
-		}
+	std::cout << "DynArray::DynArray(DynArray&) of " << size_ << std::endl;
+	for (unsigned int i = 0; i < size_; ++i) {
+		elements_[i] = rhs.elements_[i];
+	}
 }
 
 template <class T> DynArray<T>::~DynArray() {
@@ -59,7 +59,7 @@ template <class T> unsigned int DynArray<T>::push_back(const T& item) {
 		std::cout << "/ Reallocation... " << std::endl;
 		capacity_ *= 2;
 		T* bigger_elements = new T[capacity_];
-		for(unsigned int i=0; i<size_; ++i) {
+		for (unsigned int i = 0; i < size_; ++i) {
 			bigger_elements[i] = elements_[i];
 		}
 		delete[] elements_;
@@ -85,12 +85,12 @@ template <class T> T& DynArray<T>::operator[](unsigned int index) {
 }
 
 template <class T> DynArray<T>& DynArray<T>::operator=(const DynArray<T>& rhs) {
-	if (this != &rhs){
+	if (this != &rhs) {
 		delete[] elements_;
 		size_ = rhs.size_;
 		capacity_ = rhs.capacity_;
 		elements_ = new T[capacity_];
-		for (unsigned int i=0; i < size_; ++i){
+		for (unsigned int i = 0; i < size_; ++i) {
 			elements_[i] = rhs.elements_[i];
 		}
 	}

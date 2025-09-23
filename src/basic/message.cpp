@@ -2,11 +2,11 @@
 # include <HelloProjConfig.h>
 # include <basic/message.h>
 
-void hello_world(){
+void hello_world() {
 	std::cout << "Hello World" << std::endl;
 }
 
-void print_version(){
+void print_version() {
 	std::cout << "Project version is " << HelloProj_VERSION_MAJOR
-	<< "." << HelloProj_VERSION_MINOR << std::endl;
+		<< "." << HelloProj_VERSION_MINOR << std::endl;
 }
